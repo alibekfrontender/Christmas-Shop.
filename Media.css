@@ -1,0 +1,134 @@
+@media (max-width: 768px) {
+  body:has(.mobile__nav) {
+      overflow-y: hidden;
+  }
+
+  /* header section */
+  .mobile-burger {
+      display: block;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+  }
+  .burger-line {
+      height: 1px;
+      width: 20px;
+      border-radius: 10px;
+      background-color: var(--c-dark);
+      transition: all 0.2s ease;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%) rotate(0deg);
+  }
+  .burger-line:first-child {
+      top: 40%;
+  }
+  .burger-line:last-child {
+      top: 60%;
+  }
+  .mobile-burger.active {
+      & .burger-line:first-child {
+          top: 50%;
+          transform: translate(-50%) rotate(45deg);
+      }
+      & .burger-line:last-child {
+          top: 50%;
+          transform: translate(-50%) rotate(-45deg);
+      }
+  }
+  .header__nav {
+      transform: translateY(-999px);
+      transition: all 0.5s ease;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: calc(100dvh - 64px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--c-static-white);
+  }
+  .mobile__nav {
+      transform: translateY(0);
+  }
+  .header__list {
+      flex-direction: column;
+  }
+
+  .header__list-item {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 152%;
+      letter-spacing: 0.16em;
+  }
+
+  /* best gifts section */
+  .best-gifts__body {
+      padding: 0 43px;
+  }
+
+  /* footer section */
+  .footer__contacts {
+      flex-direction: column;
+  }
+
+  /* gifts page section */
+  .gifts__body {
+      justify-items: center;
+      padding: 0 43px;
+  }
+}
+@media (max-width: 425px) {
+  /* best gifts section */
+  .best-gifts__row {
+      justify-items: center;
+      grid-template-columns: 1fr;
+  }
+  .best-gifts-card {
+      max-width: 310px;
+  }
+
+  /* about section */
+  .about__wrapper {
+      flex-direction: column;
+  }
+  .about__left,
+  .about__right {
+      width: 100%;
+  }
+
+  /* gifts page section */
+  .gifts__tabs {
+      gap: 0px;
+  }
+  .tab {
+      padding: 12px 8px;
+      border-radius: 12px;
+  }
+}
+@media (max-width: 380px) {
+  .about__wrapper {
+      flex-direction: column;
+  }
+  .about__left {
+      padding: 60px 20px;
+  }
+  .best-gifts__body {
+      padding: 0;
+  }
+
+  /* gifts page section */
+  .gifts__body {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 12px;
+  }
+}
